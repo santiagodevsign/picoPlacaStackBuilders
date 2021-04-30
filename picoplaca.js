@@ -9,20 +9,25 @@ function onclic() {
     hora = '09-00'*/
     //alert(placa + fecha + hora);
     console.log(placa, fecha, hora)
+    //Validamos Inputs
     Validar(placa, fecha, hora);
+
+    //Colocamos los valores del input en formato fecha/hora
     let fechaCompleta = FormatoHora(fecha, hora);
+
+    //Falso -> hora de restriccion
     let boolHora = VerificaHora(fechaCompleta);
 
+    //Falso -> Dia de restriccion por placa
     let boolDiaPlaca = VerificaDiaYPlaca(fechaCompleta, placa);
     console.log('diaplaca'+boolDiaPlaca + 'hora'+boolHora)
+    //Comparacion restricciones
     if (boolDiaPlaca == false && boolHora == false){
         console.log('No Puede Circular');
     }
     else{
         console.log('Puede Circular');
     }
-    
-
 }
 
 function Validar(p,f,h){
@@ -38,7 +43,7 @@ function FormatoHora(f,h){
     let mes = f.substring(3,5);
     let dia = f.substring(0,2);
     console.log(dia + ' ' + mes);
-    let anio = 2021;
+    let anio = new Date().getFullYear();
     let fecha = new Date(anio, (mes-1), dia, hora, minutos);
     console.log(fecha);
   
