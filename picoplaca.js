@@ -1,5 +1,5 @@
 
-function onclic() {   
+function RevisionCompleta() {   
     let placa = document.getElementById('placa').value
     let fecha = document.getElementById('fecha').value
     let hora = document.getElementById('hora').value
@@ -22,11 +22,31 @@ function onclic() {
     let boolDiaPlaca = VerificaDiaYPlaca(fechaCompleta, placa);
     console.log('diaplaca'+boolDiaPlaca + 'hora'+boolHora)
     //Comparacion restricciones
+   ComparoRestricciones(boolDiaPlaca,boolHora);
+}
+function RevisionHoy(){
+    let hoy = new Date();
+    console.log(hoy);
+    let placa = document.getElementById('placa').value
+    //Falso -> hora de restriccion
+    let boolHora = VerificaHora(hoy);
+
+    //Falso -> Dia de restriccion por placa
+    let boolDiaPlaca = VerificaDiaYPlaca(hoy, placa);
+    console.log('diaplaca'+boolDiaPlaca + 'hora'+boolHora)
+    //Comparacion restricciones
+    ComparoRestricciones(boolDiaPlaca,boolHora);
+   
+
+}
+function ComparoRestricciones(boolDiaPlaca,boolHora){
     if (boolDiaPlaca == false && boolHora == false){
-        console.log('No Puede Circular');
+        alert('Gracias por usar Predictor\n\nNo puede circular en este momento\nEspere a que el horario de restricción termine, por favor');
     }
     else{
-        console.log('Puede Circular');
+        if(boolDiaPlaca == true)(alert('Gracias por usar Predictor\n\nPuede Circular Todo el día'))
+        if(boolDiaPlaca == false && boolHora == true)alert('Gracias por usar Predictor\n\nSu auto tiene restricción, pero puede circular en este momento\nTenga en cuenta los horarios de restricción');
+        
     }
 }
 

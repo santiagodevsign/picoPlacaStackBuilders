@@ -11,37 +11,42 @@
 <body>
     <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 border-solid border-4">
         <div class="text-center lg:text-left m-4 md:m-5 lg:m-8 border-solid border-4 ">
-            <h1 class="font-extrabold text-gray-800 text-2xl sm:text-3xl md:text-4xl lg:text-5xl m-2">¿Puedo circular hoy en Quito?</h1>
-            <span class="text-gray-500  text-md sm:text-xl md:text-2xl lg:text-3xl">Averigua si puedes circular en Quito en este momento, o planifica tu salida según las restricciones del </span>
-            <span class="text-blue-400 text-md sm:text-xl md:text-2xl lg:text-3xl"> Pico y Placa</span>
+            <h1 class="font-extrabold text-gray-800 text-3xl sm:text-3xl md:text-4xl lg:text-5xl m-2">¿Puedo circular hoy en Quito?</h1>
+            <span class="text-gray-500 text-md sm:text-xl md:text-2xl lg:text-3xl">Averigua si puedes circular en Quito en este momento, o planifica tu salida según las restricciones del </span>
+            <span class="text-blue-400 text-md sm:text-xl md:text-2xl lg:text-3xl"> Pico y Placa</span> 
         </div>
         <!-- Seccion Placa y Ahora Mismo-->
         <div class="max-w-7xl flex justify-center border-solid border-4 items-center">
-            <div class="max-w-md sm:max-w-3xl lg:max-w-7xl border-solid border-4 justify-around items-center" >
-                <label class="border-solid border-4 mx-1 sm:mx-2 lg:mx-7 text-2xl">Placa</label>
-                <input type="text" id="placa" placeholder="ABC1234" class="border-solid border-4 m-1 sm:m-2 lg:m-7 placeholder-green-300  focus:ring-1 focus:ring-green-600 focus:border-transparent ">
+            <div class="max-w-md sm:max-w-3xl lg:max-w-7xl border-solid border-4 justify-around items-center mx-0.5 p-0.5" >
+                <label class="border-solid border-4 mx-1 sm:mx-2 lg:mx-7 text-lg md:text-2xl w-48 p-0.5">Placa</label>
+                <input type="text" id="placa" placeholder="ABC1234" class="border-solid border-4 w-11/12 sm:w-auto m-1 sm:m-2 lg:m-7 placeholder-green-300  focus:ring-1 focus:ring-green-600 focus:border-transparent ">
             </div>
             <div class="m-8 ">
-                <button onclick="onclic()" class="border-solid border-4 items-center flex px-8 py-3 rounded-md text-white bg-blue-500 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">Ahora Mismo</button>
+                <button onclick="RevisionHoy()" class="border-solid border-4 items-center flex px-8 py-3 rounded-md text-white bg-blue-500 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">Ahora Mismo</button>
             </div>
+        </div>
+        <!--Seccion Texto Adicional-->
+        <div class=" border-solid border-4 p-4">
+            <span class=" text-center text-gray-500 max-w-7xl text-sm sm:text-md md:text-xl lg:text-xl lg:text-left">Si deseas averiguar la restricción para otro momento, ingresa la placa, la hora y fecha como se indica y pulsa Revisar </span>
         </div>
         <!--Seccion Fecha, Hora y Revisar-->
-        <span class=" text-center text-gray-500 max-w-7xl text-sm sm:text-md md:text-xl lg:text-xl lg:text-left">Si deseas averiguar la restricción para otro momento, ingresa la placa, la hora y fecha como se indica y pulsa Revisar </span>
-        <div class=" max-w-7xl  justify-center border-solid border-4 items-center grid grid-cols-2">
-            <div class="border-solid border-4">
-                <div >
-                    <label class="border-solid border-4">Fecha</label>
-                    <input type="text" id="fecha" placeholder="DD-MM" class="border-solid border-4 placeholder-green-300  focus:ring-1 focus:ring-green-600 focus:border-transparent ">
+        <div class="max-w-7xl flex justify-center border-solid border-4 items-center">
+            <div class="max-w-md sm:max-w-3xl lg:max-w-7xl border-solid border-4 justify-around items-center mx-0.5 p-0.5" >
+                <div>
+                <label class="border-solid border-4 mx-1 sm:mx-2 lg:mx-7 text-lg md:text-2xl p-0.5">Fecha</label>
+                    <input type="text" id="fecha" placeholder="DD-MM" class="border-solid border-4 w-11/12 sm:w-auto placeholder-green-300  focus:ring-1 focus:ring-green-600 focus:border-transparent ">
                 </div>
                 <div>
-                    <label class="border-solid border-4">Hora</label>
-                    <input type="text" id="hora" placeholder="HH:mm" class="border-solid border-4 placeholder-green-300  focus:ring-1 focus:ring-green-600 focus:border-transparent ">
+                    <label class="border-solid border-4 mx-1 sm:mx-2 lg:mx-7 text-lg md:text-2xl w-8 sm:w-auto p-0.5">Hora</label>
+                    <input type="text" id="hora" placeholder="HH:mm" class="border-solid border-4 w-11/12 sm:w-auto placeholder-green-300  focus:ring-1 focus:ring-green-600 focus:border-transparent ">
                 </div>
             </div>
             <div class="m-8 ">
-                <button onclick="onclic()" class="border-solid border-4 items-center w-60px flex px-8 py-3 rounded-md text-white bg-blue-500 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">Revisar</button>
+                <button onclick="RevisionCompleta()" class="border-solid border-4 items-center flex px-8 py-3 rounded-md text-white bg-blue-500 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">Revisar</button>
             </div>
+            
         </div>
+       
         
     </main>
 </body>
